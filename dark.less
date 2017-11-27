@@ -1,0 +1,54 @@
+/**
+* Dark theme.
+*/
+@import url(base.less);
+
+// Overriding base variables
+@navbarItemBgColor: #0F528A;
+@navbarItemHoverColor: #FFC574;
+@navbarItemHoverBgColor: #D57F0A;
+@bodyBgColor: #000;
+@footerBgColor: #0F528A;
+@footerCopyrightColor: #aaa;
+@footerCopyrightBgColor: #14354B;
+@H1BorderBottomColor: #95BFE3;
+@linkColor: #0F528A;
+
+// Variables specific to dark theme
+@linkHoverColor: #FFB651;
+@wrappAllBgColor: #071C29;
+@fontColor: #95BFE3;
+@borderColor: #14354B;
+
+.breadcrumb-list,
+.toc,
+.main {
+    a {
+        color: @linkColor;
+        text-decoration: none;
+
+        &:hover {
+            color: @linkHoverColor;
+            text-decoration: underline;
+        }
+    }
+}
+
+.footer-column a {
+    color: @fontColor;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.wrap-all {
+    border: 1px solid @borderColor;
+    color: @fontColor;
+    background-color: @wrappAllBgColor;
+}
+
+.after-main .content div {
+    border: 1px solid @borderColor;
+}

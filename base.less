@@ -1,0 +1,286 @@
+/**
+* Base theme.
+*/
+@import url(modules.less);
+
+@pageWidth: 980px;
+@bodyBgColor: white;
+@mainBgColor: white;
+@footerColor: black;
+@footerBgColor: white;
+@footerCopyrightColor: black;
+@footerCopyrightBgColor: white;
+@H1BorderBottomColor: white;
+
+
+/**
+ *  Logo images
+ */
+.logo-1 {
+    position: absolute;
+    top: 70px;
+    left: -140px;
+}
+
+.site-logo-text-icon {
+    img {
+        vertical-align: bottom;
+    }
+}
+
+/**
+*   Grid layout
+*/
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    overflow-y: scroll;
+    background-color: @bodyBgColor;
+}
+
+.wrap-all {
+    border: 1px solid #aaa;
+    max-width: @pageWidth;
+    margin: 16px auto;
+    padding: @magicNumber;
+    background-color: @mainBgColor;
+
+    h1 {
+        border-bottom: 1px solid @H1BorderBottomColor;
+    }
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+    }
+
+    i {
+        font-style: normal;
+    }
+}
+
+.row {
+    .row();
+}
+
+.inner-wrap {
+    @gridWidth: 940px;
+
+    .grid(@gridWidth);
+    html.vgrid & {
+        @gridImage: "../img/grid/grid940x12x60x20-nomargin.png";
+        .showVerticalGrid(@gridWidth, @gridImage);
+    }
+
+    html.hgrid & {
+        @gridImage: "../img/horisontal-grid-24.png";
+        .showHorizontalGrid(@gridImage);
+    }
+}
+
+.outer-wrap-main,
+.outer-wrap-after-main {
+    margin-bottom: @magicNumber;
+}
+
+/**
+*   Header
+*/
+.site-header {
+    margin-top: @magicNumber;
+    margin-bottom: @magicNumber;
+    .clearfix();
+}
+
+.site-logo-text {
+    .column(3);
+    font-size: 2em;
+
+    a {
+        color: #0d5283;
+        text-decoration: none;
+    }
+}
+
+.navbar2 {
+    .column(9);
+}
+
+.rm-max.rm-navbar  {
+    .column(0);
+    position: inherit;
+    display: none;
+    font-size: 1.5em;
+    padding-top: 16px;
+    padding-right: 16px;
+}
+
+.flash-wrap,
+.breadcrumb-wrap {
+    .column(12);
+}
+
+/**
+*   Main
+*/
+
+.main {
+    min-height: 480px;
+    .column(12);
+
+    &.has-sidebar {
+        .column(8);
+    }
+}
+
+.sidebar {
+    .column(4);
+}
+
+.after-main {
+    .column(12);
+
+    .content {
+        .column(7);
+        .push(1);
+    }
+}
+
+/**
+*   Redovisning sida
+*/
+.next-previous {
+    .next,
+    .previous {
+        .column(4);
+    }
+
+    .next {
+        float: right;
+        text-align: right;
+    }
+
+    margin-bottom: @magicNumber;
+    .clearfix();
+}
+
+.breadcrumb-list {
+    margin: @magicNumber 0;
+
+    ul {
+        display: inline;
+        list-style-type: none;
+    }
+
+    li {
+        float: left;
+        padding-right: 8px;
+        :after {
+            content: " »";
+        }
+    }
+}
+
+/**
+*   Teman sida
+*/
+.palette {
+    overflow: auto;
+
+    li {
+        float: left;
+        display: block;
+        margin-left: 4px;
+        width: 3em;
+        height: 3em;
+        border: 1px solid #666;
+    }
+}
+
+/**
+*   Footer
+*/
+
+.footer-column {
+    .column(4);
+    text-align: center;
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.footer {
+    .column(12);
+    color: @footerColor;
+    background-color: @footerCopyrightBgColor;
+}
+
+.footer-column-wrapper {
+    .clearfix();
+    background-color: @footerBgColor;
+}
+
+.site-footer {
+    .column(12);
+    text-align: center;
+    color: @footerCopyrightColor;
+}
+
+
+
+/**
+ *  Responsivness - Media queries
+ */
+img {
+    max-width: 100%;
+}
+
+@media screen and (max-width: 950px) {
+    .navbar2 {
+        display: none;
+    }
+
+    .rm-max.rm-navbar  {
+        .column(1);
+        display: inline;
+    }
+
+    .site-logo-text {
+        .column(11);
+    }
+
+    .after-main .content {
+        .column(10);
+        .push(1);
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .sidebar {
+        //width: 100%;
+        display: none;
+    }
+
+    .main {
+        &.has-sidebar {
+            .column(12);
+        }
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .footer-column {
+        .column(12);
+    }
+}
