@@ -1,0 +1,29 @@
+/**
+* Dark theme.
+*/
+@import url(dark.less);
+
+@wrappAllBgColor: #071C29;
+@footerBgColor: #0F528A;
+@footerCopyrightBgColor: #14354B;
+
+body {
+    background-image: url("../img/bg-starry.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.wrap-all {
+    background-image: linear-gradient(@wrappAllBgColor, black);
+}
+
+.footer-column-wrapper,
+.rm-desktop li a {
+    background-image: linear-gradient(@footerBgColor, @footerCopyrightBgColor);
+}
+
+.article .figure code {
+    background-color: black;
+    border: 1px solid black;
+}

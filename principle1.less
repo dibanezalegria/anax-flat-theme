@@ -1,0 +1,46 @@
+/**
+*   Principle 1 based on Dark theme.
+*/
+@import url(dark.less);
+
+@navbarItemBgColor: #212121;
+@navbarItemHoverColor: #00fc88;
+@navbarItemHoverBgColor: #424242;
+@footerBgColor: #424242;
+@footerCopyrightBgColor: #212121;
+@H1BorderBottomColor: #424242;
+@linkColor: #00fc88;
+@linkHoverColor: #00fc88;
+@fontColor: #00fc88;
+@borderColor: #212121;
+
+body {
+    background-image: url("../img/bg-pattern3.png");
+}
+
+.wrap-all {
+    background-color: rgba(0,0,0,0.5);
+}
+
+.footer-column a {
+    color: @linkColor;
+}
+
+img {
+    -webkit-filter: grayscale(100%);    /* Ch 23+, Saf 6.0+ */
+    filter: grayscale(100%);    /* FF 35+ */
+}
+
+.figure {
+    border: none;
+}
+
+.article .figure code {
+    background-color: rgba(0,0,0,0.5);
+    border: 1px solid black;
+}
+
+.footer,
+.footer-column-wrapper {
+    background-color: rgba(255,255,255,0.1);
+}
